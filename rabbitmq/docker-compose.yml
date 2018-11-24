@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  rabbitmq:
+    restart: always
+    container_name: rabbitmq
+    hostname: rabbitmq
+    image: rabbitmq:3.7.8-management
+    ports:
+      - "10601:5672"
+      - "10602:15672"
+      - "10603:25672"
+    environment:
+      - "RABBITMQ_DEFAULT_USER = admin"
+      - "RABBITMQ_DEFAULT_PASS = admin"
