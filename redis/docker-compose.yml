@@ -6,7 +6,5 @@ services:
     hostname: redis
     image: redis:5.0.1
     ports:
-      - "6379:6379"
-    secrets:
-      - redis-pass
-    command: redis-server --requirepass 123456 
+      - 6379:6379
+    command: redis-server --requirepass 123456
