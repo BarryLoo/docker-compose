@@ -2,6 +2,8 @@ version: "3.7"
 services:
   registry-1:
     restart: always
+    external_links:
+      - "rabbitmq"
     container_name: registry-1
     hostname: registry-1
     image: java:8-jdk
@@ -9,4 +11,4 @@ services:
       - /home/cloud/registry/registry-1/registry-1.0.1-RELEASE-exec.jar:/home/jar/registry.jar
     ports:
       - "10699:8761"
-    command: java -jar -Xms256m -Xmx512m -Dfile.encoding=utf-8 -Dspring.rabbitmq.host=rabbitmq /home/jar/registry.jar
+    command: java -jar -Xms256m -Xmx512m -Dfile.encoding=utf-8 -Dspring.rabbitmq.host=rabbitmq -Dspring.rabbitmq.port=5672 /home/jar/registry.jar

@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  admin:
+    restart: always
+    container_name: admin
+    hostname: admin
+    image: java:8-jdk
+    external_links:
+      - "rabbitmq"
+      - "registry-1"
+    volumes:
+      - /home/cloud/admin/cloud-admin-0.0.1-SNAPSHOT-exec.jar:/home/jar/admin.jar
+    ports:
+      - "10698:8080"
+    command: java -jar -Xms256m -Xmx512m -Dfile.encoding=utf-8 -Dspring.rabbitmq.host=rabbitmq -Dspring.rabbitmq.port=5672 -Deureka.client.serviceUrl.defaultZone=http://registry-1:8761/eureka /home/jar/admin.jar
