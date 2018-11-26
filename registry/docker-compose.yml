@@ -2,8 +2,8 @@ version: "3.7"
 services:
   registry-1:
     restart: always
-    external_links:
-      - "rabbitmq"
+    depends_on:
+      - rabbitmq
     container_name: registry-1
     hostname: registry-1
     image: java:8-jdk
