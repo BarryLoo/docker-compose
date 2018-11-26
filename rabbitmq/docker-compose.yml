@@ -9,6 +9,3 @@ services:
       - "10601:5672"
       - "10602:15672"
       - "10603:25672"
-    environment:
-      - "RABBITMQ_DEFAULT_USER = admin"
-      - "RABBITMQ_DEFAULT_PASS = admin"
