@@ -29,7 +29,7 @@ sudo yum-config-manager --enable docker-ce-edge
 
 Forth step:
 ```
-sudo yum install docker-ce
+sudo yum install docker-ce -y
 ```
 
 ### Docker-compose Install
