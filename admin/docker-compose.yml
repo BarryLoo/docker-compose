@@ -6,7 +6,12 @@ services:
     image: java:8-jdk
     container_name: admin
     hostname: admin
+<<<<<<< HEAD
     external_links:
+=======
+    image: java:8-jdk
+    depends_on:
+>>>>>>> branch 'master' of https://github.com/BarryLoo/docker-compose.git
       - rabbitmq
       - registry-1
     volumes:

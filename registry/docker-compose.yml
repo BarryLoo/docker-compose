@@ -2,8 +2,12 @@ version: "3.7"
 services:
   registry-1:
     restart: always
+<<<<<<< HEAD
     network_mode: bridge
     external_links:
+=======
+    depends_on:
+>>>>>>> branch 'master' of https://github.com/BarryLoo/docker-compose.git
       - rabbitmq
     container_name: registry-1
     hostname: registry-1
