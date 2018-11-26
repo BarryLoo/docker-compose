@@ -1,4 +1,4 @@
-# To the devs
+# To devs
 If you wanna use these yaml file. Please check you environment. Based on the situation which the writer used. Please check the environment before.
 
 ## System Environment
