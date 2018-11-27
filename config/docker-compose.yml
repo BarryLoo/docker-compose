@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  admin:
+    restart: always
+    network_mode: bridge
+    image: java:8-jdk
+    container_name: configserver
+    hostname: configserver
+    external_links:
+      - rabbitmq
+      - registry-2
+    volumes:
+      - /home/cloud/config/cloud-config-1.0.1-RELEASE-exec.jar:/home/jar/configserver.jar
+    ports:
+      - 10698:8080
+    command: 
+      - "java -jar -Xms256m -Xmx512m \
+      -Dfile.encoding=utf-8 -Dspring.rabbitmq.host=rabbitmq \
+      -Dspring.rabbitmq.port=5672 \
+      -Deureka.client.serviceUrl.defaultZone=http://registry-2:8761/eureka/ \
+      /home/jar/configserver.jar"

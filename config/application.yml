@@ -1,0 +1,32 @@
+server:
+  port: 8080
+logging:
+  file: /var/log/cloud/${spring.application.name}/${spring.application.name}.log
+  path: /var/log/cloud/${spring.application.name}/
+spring:
+  application:
+    admin:
+      enabled: true
+  profiles:
+    active: docker
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: '*'
+    web:
+      exposure:
+        include: '*'
+      cors:
+        allowed-headers: '*'
+        allowed-methods: '*'
+        allowed-origins: '*'
+  endpoint:
+    health:
+      show-details: always
+    logfile:
+      enabled: true
