@@ -40,7 +40,8 @@ sudo sed -i 's+download.docker.com+mirrors.tuna.tsinghua.edu.cn/docker-ce+' /etc
 Based on The link[https://docs.docker.com/compose/install/#install-compose]</br>
 
 ```
-sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" \
+-o /usr/local/bin/docker-compose
 ```
 
 ```
