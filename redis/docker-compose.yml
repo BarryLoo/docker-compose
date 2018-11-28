@@ -2,6 +2,7 @@ version: "3.7"
 services:
   redis:
     restart: always
+    network_mode: bridge
     container_name: redis
     hostname: redis
     image: redis:5.0.1
