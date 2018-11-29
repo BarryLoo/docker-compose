@@ -47,3 +47,10 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-
 ```
 sudo chmod +x /usr/local/bin/docker-compose
 ```
+
+### Docker start
+```
+systemctl start docker
+
+systemctl enable docker
+```
