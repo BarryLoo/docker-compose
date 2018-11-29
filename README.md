@@ -31,7 +31,7 @@ Forth step:
 ```
 sudo yum install docker-ce -y
 ```
-if you were in china and can not download the docker-ce, please run the command below:
+if you were in China and can not download the docker-ce, please run the command below:
 ```
 sudo sed -i 's+download.docker.com+mirrors.tuna.tsinghua.edu.cn/docker-ce+' /etc/yum.repos.d/docker-ce.repo
 ```
