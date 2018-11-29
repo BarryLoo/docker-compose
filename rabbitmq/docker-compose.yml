@@ -2,6 +2,7 @@ version: "3.7"
 services:
   rabbitmq:
     restart: always
+    network_mode: bridge
     container_name: rabbitmq
     hostname: rabbitmq
     image: rabbitmq:3.7.8-management
