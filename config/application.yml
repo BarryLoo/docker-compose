@@ -32,3 +32,5 @@ management:
       show-details: always
     logfile:
       enabled: true
+    restart:
+      enabled: true
