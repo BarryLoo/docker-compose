@@ -1,14 +1,10 @@
 server:
   port: 8080
-logging:
-  file: /var/log/cloud/${spring.application.name}/${spring.application.name}.log
-  path: /var/log/cloud/${spring.application.name}/
 spring:
-  application:
-    admin:
+  devtools:
+    restart:
+      log-condition-evaluation-delta: true
       enabled: true
-  profiles:
-    active: docker
 eureka:
   instance:
     prefer-ip-address: true
