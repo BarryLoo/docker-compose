@@ -6,6 +6,6 @@ services:
     hostname: nexus
     image: sonatype/nexus3:3.14.0
     ports:
-      - "10600:8081"
+      - 10600:8081
     volumes:
       - /home/nexus/nexus-data:/var/nexus-data
