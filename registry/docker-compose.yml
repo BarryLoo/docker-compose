@@ -2,11 +2,11 @@ version: "3.7"
 services:
   registry-1:
     restart: always
-    network_mode: bridge
+    networks: 
+      - backend
     external_links:
       - rabbitmq
       - configserver
-      - registry-2
     container_name: registry-1
     hostname: registry-1
     image: java:8-jdk
@@ -17,11 +17,11 @@ services:
     command: java -jar -Xms256m -Xmx512m -Dfile.encoding=utf-8 -Dspring.rabbitmq.host=rabbitmq -Dspring.rabbitmq.port=5672 -Deureka.client.serviceUrl.defaultZone=http://registry-2:8761/eureka/ /home/jar/registry.jar
   registry-2:
     restart: always
-    network_mode: bridge
+    networks: 
+      - backend
     external_links:
       - rabbitmq
       - configserver
-      - registry-1
     container_name: registry-2
     hostname: registry-2
     image: java:8-jdk
@@ -30,3 +30,8 @@ services:
     ports:
       - 10697:8761
     command: java -jar -Xms256m -Xmx512m -Dfile.encoding=utf-8 -Dspring.rabbitmq.host=rabbitmq -Dspring.rabbitmq.port=5672 -Deureka.client.serviceUrl.defaultZone=http://registry-1:8761/eureka/ /home/jar/registry.jar
+networks:
+  backend:
+    name: registry
+    attachable: true
+    driver: bridge
