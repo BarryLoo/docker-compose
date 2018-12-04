@@ -7,6 +7,6 @@ services:
     hostname: rabbitmq
     image: rabbitmq:3.7.8-management
     ports:
-      - "10601:5672"
-      - "10602:15672"
-      - "10603:25672"
+      - 10601:5672
+      - 10602:15672
+      - 10603:25672
