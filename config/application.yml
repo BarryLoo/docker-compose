@@ -3,6 +3,18 @@ spring:
     restart:
       log-condition-evaluation-delta: true
       enabled: true
+    livereload:
+      enabled: true
+      port: 35729
+    remote:
+      restart:
+        enabled: true
+  cloud:
+    refresh:
+      extra-refreshable: true
+    service-registry:
+      auto-registration:
+        register-management: true
 eureka:
   instance:
     prefer-ip-address: true
