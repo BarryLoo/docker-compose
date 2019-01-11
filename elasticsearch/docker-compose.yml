@@ -2,6 +2,8 @@ version: "3.7"
 services:
   elasticsearch:
     restart: always
+    networks:
+      - elastic-stack
     container_name: elasticsearch
     hostname: elasticsearch
     image: elasticsearch:5.6.10
@@ -10,6 +12,8 @@ services:
       - 10612:9300
   kibana:
     restart: always
+    networks:
+      - elastic-stack
     container_name: kibana
     hostname: kibana
     image: kibana:5.6.10
@@ -17,3 +21,12 @@ services:
       - 10613:5601
     environment:
       ELASTICSEARCH_URL: http://elasticsearch:9200
+  logstash:
+    restart: always
+    networks:
+      - elastic-stack
+    container_name: logstash
+    hostname: logstash
+    image: logstash:5.6.10
+    ports:
+      - 10614:5044
