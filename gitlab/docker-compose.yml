@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  gitlab:
+    restart: always
+    network_mode: bridge
+    container_name: gitlab
+    hostname: gitlab
+    image: gitlab/gitlab-ce:12.2.4-ce.0
+    environment:
+      GITLAB_HOST: 172.29.14.52
+      GITLAB_PORT: 52049
+      GITLAB_SSH_PORT: 52050
+    ports:
+      - "52049:80"
+      - "52050:22"
+    volumes:
+      - "/var/fcn/tutor/docker/gitlab/conf:/etc/gitlab"
+      - "/var/fcn/tutor/docker/gitlab/log:/var/log/gitlab"
+      - "/var/fcn/tutor/docker/gitlab/data:/var/opt/gitlab"
